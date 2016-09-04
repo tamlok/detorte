@@ -75,3 +75,12 @@ hi markdownH6   term=bold cterm=bold ctermfg=35 gui=bold guifg=#00af5f
 hi markdownHeadingDelimiter term=bold cterm=bold ctermfg=40 gui=bold guifg=#00df00
 
 hi markdownInlineCode   term=underline cterm=none ctermfg=254 ctermbg=239 gui=none guifg=#e4e4e4 guibg=#4e4e4e
+
+" Change highlights to a high contrast mode
+function! DetorteHighContrastFn()
+    hi Normal guifg=White guibg=#262626 ctermfg=255 ctermbg=235
+    hi CursorColumn ctermbg=236 guibg=#303030
+    hi CursorLine term=NONE cterm=NONE ctermbg=237 gui=none guibg=#3a3a3a
+    hi ColorColumn ctermbg=238 guibg=#444444
+endfunction
+command! DetorteHighContrast call DetorteHighContrastFn()
