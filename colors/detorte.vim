@@ -65,3 +65,13 @@ hi PreProc  guifg=#ff5fdf ctermfg=206
 hi Type	    guifg=#00d787 gui=none ctermfg=42 cterm=none
 hi Todo	    ctermfg=118 ctermbg=124 cterm=bold guifg=#87ff00 guibg=#af0000 gui=bold
 
+" Markdown highlights
+hi markdownH1   term=bold cterm=bold ctermfg=40 gui=bold guifg=#00df00
+hi markdownH2   term=bold cterm=bold ctermfg=34 gui=bold guifg=#00af00
+hi markdownH3   term=bold cterm=bold ctermfg=35 gui=bold guifg=#00af5f
+hi markdownH4   term=bold cterm=bold ctermfg=35 gui=bold guifg=#00af5f
+hi markdownH5   term=bold cterm=bold ctermfg=35 gui=bold guifg=#00af5f
+hi markdownH6   term=bold cterm=bold ctermfg=35 gui=bold guifg=#00af5f
+hi markdownHeadingDelimiter term=bold cterm=bold ctermfg=40 gui=bold guifg=#00df00
+
+hi markdownInlineCode   term=underline cterm=none ctermfg=254 ctermbg=239 gui=none guifg=#e4e4e4 guibg=#4e4e4e
