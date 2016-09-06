@@ -54,6 +54,8 @@ hi ReplaceCursor ctermfg=15 guifg=#fdf6e3 ctermbg=65  guibg=#dc322f
 hi CommandCursor ctermfg=15 guifg=#fdf6e3 ctermbg=166 guibg=#cb4b16
 
 hi ExtraWhitespace ctermbg=202 guibg=#ff5f00
+hi TabLineSel    term=underline cterm=none ctermfg=16 ctermbg=185 guibg=#dfdf5f guifg=black gui=none
+hi TabLine  guibg=#afafaf guifg=black gui=none ctermbg=145 ctermfg=16 cterm=none
 
 " Syntax highlights
 hi Special  ctermfg=214 guifg=#ffaf00
