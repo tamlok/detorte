@@ -25,7 +25,8 @@ hi MoreMsg  guifg=#5fd75f ctermfg=77 gui=bold cterm=bold
 hi NonText  guifg=#afd7d7 guibg=grey30 ctermfg=152 ctermbg=239
 hi Question guifg=SpringGreen1 ctermfg=48
 hi Search   term=reverse guifg=#ffffff guibg=#af8700 ctermfg=15 ctermbg=136
-hi SpecialKey   guifg=#5fd7ff ctermfg=81
+" hi SpecialKey   guifg=#5fd7ff ctermfg=81
+hi SpecialKey   guifg=#4e4e4e ctermfg=239
 hi StatusLine   guibg=LightGoldenrod3 guifg=black gui=none ctermbg=179 ctermfg=16 cterm=none
 hi StatusLineNC guibg=#c2bfa5 guifg=#262626 gui=none ctermbg=144 ctermfg=235 cterm=none
 hi Title    guifg=IndianRed ctermfg=167
