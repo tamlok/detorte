@@ -22,7 +22,7 @@ hi LineNr   guifg=#afaf5f ctermfg=143
 hi IncSearch    guifg=#000000 guibg=#87afff gui=none ctermfg=16 ctermbg=111 cterm=none
 hi ModeMsg  guifg=#dfdf87 ctermfg=186
 hi MoreMsg  guifg=#5fd75f ctermfg=77 gui=bold cterm=bold
-hi NonText  guifg=#afd7d7 guibg=#626262 ctermfg=152 ctermbg=241
+hi NonText  guifg=#afd7d7 guibg=#3a3a3a ctermfg=152 ctermbg=237
 hi Question guifg=SpringGreen1 ctermfg=48
 hi Search   term=reverse guifg=#ffffff guibg=#af8700 ctermfg=15 ctermbg=136
 " hi SpecialKey   guifg=#5fd7ff ctermfg=81
@@ -43,7 +43,7 @@ hi Error    guifg=White guibg=#d70000 ctermfg=15 ctermbg=160
 hi ColorColumn  ctermbg=238 guibg=#444444
 hi Modifier cterm=inverse ctermfg=118 gui=inverse guifg=#87ff00
 hi StatuslineWarning    cterm=inverse ctermfg=210 gui=inverse guifg=#ff8787
-hi StatuslineBufNum ctermbg=23 ctermfg=15 cterm=bold guibg=#005f5f guifg=#ffffff gui=bold
+hi StatuslineBufNum ctermbg=242 ctermfg=15 cterm=bold guibg=#6c6c6c guifg=#ffffff gui=bold
 hi Directory    ctermfg=50 guifg=#00eeee
 hi CursorColumn ctermbg=239 guibg=#4e4e4e
 hi Function gui=NONE cterm=NONE ctermfg=105 guifg=#B5A1FF
