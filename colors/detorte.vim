@@ -77,6 +77,8 @@ hi markdownH6   term=bold cterm=bold ctermfg=35 gui=bold guifg=#00af5f
 hi markdownHeadingDelimiter term=bold cterm=bold ctermfg=40 gui=bold guifg=#00df00
 
 hi markdownInlineCode   term=underline cterm=none ctermfg=254 ctermbg=240 gui=none guifg=#e4e4e4 guibg=#585858
+hi markdownBold term=bold cterm=bold ctermfg=15 gui=bold guifg=#ffffff
+hi markdownBoldItalic term=bold,italic cterm=bold,italic ctermfg=15 gui=bold,italic guifg=#ffffff
 
 " For Tagbar plugin
 highlight TagbarSignature guifg=#5fd7ff ctermfg=81
