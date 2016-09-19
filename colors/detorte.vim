@@ -265,16 +265,16 @@ else
     call s:DetorteHL('Underlined', 27, -1, 'Underline')
 
     " For vim-markdown plugin
-    call s:DetorteHL('markdownH1', 34, -1, "Bold")
-    hi markdownH2   term=bold cterm=bold ctermfg=34 gui=bold guifg=#00af00
-    hi markdownH3   term=bold cterm=bold ctermfg=35 gui=bold guifg=#00af5f
-    hi markdownH4   term=bold cterm=bold ctermfg=35 gui=bold guifg=#00af5f
-    hi markdownH5   term=bold cterm=bold ctermfg=35 gui=bold guifg=#00af5f
-    hi markdownH6   term=bold cterm=bold ctermfg=35 gui=bold guifg=#00af5f
-    call s:DetorteHL('markdownHeadingDelimiter', 34, -1, "Bold")
-    call s:DetorteHL('markdownInlineCode', 0, 249, "None")
-    call s:DetorteHL('markdownBold', 0, -1, "Bold")
-    call s:DetorteHL('markdownBoldItalic', 0, -1, "Bold,Italic")
+    call s:DetorteHL('markdownH1', 28, -1, "Bold")
+    call s:DetorteHL('markdownH2', 28, -1, "Bold")
+    call s:DetorteHL('markdownH3', 28, -1, "Bold")
+    call s:DetorteHL('markdownH4', 28, -1, "Bold")
+    call s:DetorteHL('markdownH5', 28, -1, "Bold")
+    call s:DetorteHL('markdownH6', 28, -1, "Bold")
+    call s:DetorteHL('markdownHeadingDelimiter', 28, -1, "Bold")
+    call s:DetorteHL('markdownInlineCode', 232, 252, "None")
+    call s:DetorteHL('markdownBold', 232, -1, "Bold")
+    call s:DetorteHL('markdownBoldItalic', 232, -1, "Bold,Italic")
 
     " For Tagbar plugin
     call s:DetorteHL('TagbarSignature', 6, -1)
