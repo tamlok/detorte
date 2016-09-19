@@ -149,8 +149,6 @@ if g:detorte_theme_mode == 'dark'
     hi Question guifg=SpringGreen1 ctermfg=48
     hi Search   term=reverse guifg=#ffffff guibg=#af8700 ctermfg=15 ctermbg=136
     hi SpecialKey   guifg=#626262 ctermfg=241
-    hi StatusLine   guibg=LightGoldenrod3 guifg=black gui=none ctermbg=179 ctermfg=16 cterm=none
-    hi StatusLineNC guibg=#c2bfa5 guifg=#262626 gui=none ctermbg=144 ctermfg=235 cterm=none
     hi Title    guifg=IndianRed ctermfg=167
     hi Visual   gui=none guifg=#ffffff guibg=olivedrab cterm=none ctermfg=15 ctermbg=64
     hi WarningMsg   guifg=#ff5f87 ctermfg=204
@@ -169,6 +167,13 @@ if g:detorte_theme_mode == 'dark'
     hi Directory    ctermfg=50 guifg=#00eeee
     hi CursorColumn ctermbg=240 guibg=#585858
     hi Function gui=NONE cterm=NONE ctermfg=105 guifg=#B5A1FF
+
+    " Statusline
+    call s:DetorteHL('StatusLineNormal', 16, 179, 'None')
+    call s:DetorteHL('StatusLineInsert', 16, 71, 'None')
+    call s:DetorteHL('StatusLineReplace', 16, 139, 'None')
+    call s:DetorteHL('StatusLine', 16, 179, 'None')
+    hi StatusLineNC guibg=#c2bfa5 guifg=#262626 gui=none ctermbg=144 ctermfg=235 cterm=none
 
     " Mode-aware cursor color
     hi InsertCursor  ctermfg=15 guifg=#fdf6e3 ctermbg=37  guibg=#2aa198
@@ -223,8 +228,6 @@ else
     call s:DetorteHL('Question', 27, -1)
     call s:DetorteHL('Search', 0, 214)
     call s:DetorteHL('SpecialKey', 247, -1)
-    hi StatusLine   guibg=LightGoldenrod3 guifg=black gui=none ctermbg=179 ctermfg=16 cterm=none
-    hi StatusLineNC guibg=#c2bfa5 guifg=#262626 gui=none ctermbg=144 ctermfg=235 cterm=none
     call s:DetorteHL('Title', 2, -1)
     hi Visual   gui=none guifg=#ffffff guibg=olivedrab cterm=none ctermfg=15 ctermbg=64
     call s:DetorteHL('WarningMsg', 5, -1)
@@ -237,7 +240,7 @@ else
     hi ErrorMsg guifg=White guibg=#d70000 ctermfg=15 ctermbg=160
     hi Error    guifg=White guibg=#d70000 ctermfg=15 ctermbg=160
     call s:DetorteHL('ColorColumn', -1, 251)
-    call s:DetorteHL('Modifier', 2, -1, "Inverse")
+    call s:DetorteHL('Modifier', 69, -1, "Inverse")
     call s:DetorteHL('StatuslineWarning', 124, -1, "Inverse")
     hi StatuslineBufNum ctermbg=242 ctermfg=15 cterm=bold guibg=#6c6c6c guifg=#ffffff gui=bold
     call s:DetorteHL('Directory', 20, -1)
@@ -245,6 +248,14 @@ else
     hi ExtraWhitespace ctermbg=202 guibg=#ff5f00
     hi TabLineSel    term=underline cterm=none ctermfg=16 ctermbg=185 guibg=#dfdf5f guifg=black gui=none
     hi TabLine  guibg=#afafaf guifg=black gui=none ctermbg=145 ctermfg=16 cterm=none
+    call s:DetorteHL('MatchParen', 15, 137)
+
+    " Statusline
+    call s:DetorteHL('StatusLineNormal', 16, 179, 'None')
+    call s:DetorteHL('StatusLineInsert', 16, 71, 'None')
+    call s:DetorteHL('StatusLineReplace', 16, 139, 'None')
+    call s:DetorteHL('StatusLine', 16, 179, 'None')
+    hi StatusLineNC guibg=#c2bfa5 guifg=#262626 gui=none ctermbg=144 ctermfg=235 cterm=none
 
     " Mode-aware cursor color
     call s:DetorteHL('InsertCursor', 15, 25)
@@ -282,6 +293,11 @@ else
     " For indentLine plugin
     let g:indentLine_color_term = 247
     let g:indentLine_color_gui = '#9e9e9e'
+
+    " For EasyMotion plugin
+    call s:DetorteHL('EasyMotionTarget', 160, -1, 'Bold')
+    call s:DetorteHL('EasyMotionTarget2First', 20, -1, 'Bold')
+    call s:DetorteHL('EasyMotionTarget2Second', 5, -1, 'Bold')
 endif
 
 " Change highlights to a high contrast mode in dark theme mode
