@@ -145,7 +145,7 @@ if g:detorte_theme_mode == 'dark'
     hi IncSearch    guifg=#000000 guibg=#87afff gui=none ctermfg=16 ctermbg=111 cterm=none
     hi ModeMsg  guifg=#dfdf87 ctermfg=186
     hi MoreMsg  guifg=#5fd75f ctermfg=77 gui=bold cterm=bold
-    hi NonText  guifg=#afd7d7 guibg=#444444 ctermfg=152 ctermbg=238
+    hi NonText  guifg=#afd7d7 ctermfg=152
     hi Question guifg=SpringGreen1 ctermfg=48
     hi Search   term=reverse guifg=#ffffff guibg=#af8700 ctermfg=15 ctermbg=136
     hi SpecialKey   guifg=#626262 ctermfg=241
@@ -214,7 +214,7 @@ if g:detorte_theme_mode == 'dark'
     let g:indentLine_color_gui = '#626262'
 else
     " Light background
-    call s:DetorteHL('Normal', 234, 254)
+    call s:DetorteHL('Normal', 234, 252)
 
     call s:DetorteHL('Cursor', 228, 23)
     hi VertSplit    guibg=#c2bfa5 guifg=grey50 gui=none
@@ -222,16 +222,16 @@ else
     hi FoldColumn   guibg=#585858 guifg=#afaf5f ctermbg=240 ctermfg=143
     call s:DetorteHL('LineNr', 243, -1)
     hi IncSearch    guifg=#000000 guibg=#87afff gui=none ctermfg=16 ctermbg=111 cterm=none
-    call s:DetorteHL('ModeMsg', 162, -1)
-    call s:DetorteHL('MoreMsg', 162, -1, "Bold")
-    call s:DetorteHL('NonText', 26, 254)
+    call s:DetorteHL('ModeMsg', 2, -1)
+    call s:DetorteHL('MoreMsg', 2, -1, "Bold")
+    call s:DetorteHL('NonText', 26, -1)
     call s:DetorteHL('Question', 27, -1)
     call s:DetorteHL('Search', 0, 214)
     call s:DetorteHL('SpecialKey', 247, -1)
     call s:DetorteHL('Title', 2, -1)
     hi Visual   gui=none guifg=#ffffff guibg=olivedrab cterm=none ctermfg=15 ctermbg=64
     call s:DetorteHL('WarningMsg', 5, -1)
-    call s:DetorteHL('CursorLine', -1, 252, 'None')
+    call s:DetorteHL('CursorLine', -1, 250, 'None')
     call s:DetorteHL('CursorLineNr', 234, -1, 'Bold')
     hi PmenuSel ctermfg=16 ctermbg=220 cterm=NONE guifg=Black guibg=#ffdf00 gui=none
     hi Pmenu    ctermfg=16 ctermbg=250 guifg=Black guibg=#bcbcbc
@@ -244,7 +244,7 @@ else
     call s:DetorteHL('StatuslineWarning', 124, -1, "Inverse")
     hi StatuslineBufNum ctermbg=242 ctermfg=15 cterm=bold guibg=#6c6c6c guifg=#ffffff gui=bold
     call s:DetorteHL('Directory', 20, -1)
-    call s:DetorteHL('CursorColumn', -1, 252)
+    call s:DetorteHL('CursorColumn', -1, 250)
     hi ExtraWhitespace ctermbg=202 guibg=#ff5f00
     hi TabLineSel    term=underline cterm=none ctermfg=16 ctermbg=185 guibg=#dfdf5f guifg=black gui=none
     hi TabLine  guibg=#afafaf guifg=black gui=none ctermbg=145 ctermfg=16 cterm=none
@@ -283,7 +283,7 @@ else
     call s:DetorteHL('markdownH5', 28, -1, "Bold")
     call s:DetorteHL('markdownH6', 28, -1, "Bold")
     call s:DetorteHL('markdownHeadingDelimiter', 28, -1, "Bold")
-    call s:DetorteHL('markdownInlineCode', 232, 252, "None")
+    call s:DetorteHL('markdownInlineCode', 232, 250, "None")
     call s:DetorteHL('markdownBold', 232, -1, "Bold")
     call s:DetorteHL('markdownBoldItalic', 232, -1, "Bold,Italic")
 
@@ -295,7 +295,7 @@ else
     let g:indentLine_color_gui = '#9e9e9e'
 
     " For EasyMotion plugin
-    call s:DetorteHL('EasyMotionTarget', 160, -1, 'Bold')
+    call s:DetorteHL('EasyMotionTarget', 124, -1, 'Bold')
     call s:DetorteHL('EasyMotionTarget2First', 20, -1, 'Bold')
     call s:DetorteHL('EasyMotionTarget2Second', 5, -1, 'Bold')
 endif
