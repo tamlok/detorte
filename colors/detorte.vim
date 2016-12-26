@@ -164,6 +164,7 @@ if g:detorte_theme_mode == 'dark'
     hi Modifier cterm=inverse ctermfg=118 gui=inverse guifg=#87ff00
     hi StatuslineWarning    cterm=inverse ctermfg=210 gui=inverse guifg=#ff8787
     hi StatuslineBufNum ctermbg=242 ctermfg=15 cterm=bold guibg=#6c6c6c guifg=#ffffff gui=bold
+    call s:DetorteHL('StatuslineFileName', 16, 73, 'None')
     hi Directory    ctermfg=50 guifg=#00eeee
     hi CursorColumn ctermbg=240 guibg=#585858
     hi Function gui=NONE cterm=NONE ctermfg=105 guifg=#B5A1FF
@@ -243,6 +244,7 @@ else
     call s:DetorteHL('Modifier', 69, -1, "Inverse")
     call s:DetorteHL('StatuslineWarning', 124, -1, "Inverse")
     hi StatuslineBufNum ctermbg=242 ctermfg=15 cterm=bold guibg=#6c6c6c guifg=#ffffff gui=bold
+    call s:DetorteHL('StatuslineFileName', 16, 73, 'None')
     call s:DetorteHL('Directory', 20, -1)
     call s:DetorteHL('CursorColumn', -1, 250)
     hi ExtraWhitespace ctermbg=202 guibg=#ff5f00
