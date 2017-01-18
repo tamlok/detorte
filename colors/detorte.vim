@@ -196,6 +196,12 @@ if g:detorte_theme_mode == 'dark'
     hi Type	    guifg=#00d787 gui=none ctermfg=42 cterm=none
     hi Todo	    ctermfg=118 ctermbg=124 cterm=bold guifg=#87ff00 guibg=#af0000 gui=bold
 
+    " Diff mode
+    call s:DetorteHL('DiffAdd', 10, 242, 'None')
+    call s:DetorteHL('DiffChange', 253, 242, 'None')
+    call s:DetorteHL('DiffText', 253, 55, 'None')
+    call s:DetorteHL('DiffDelete', 9, 242, 'None')
+
     " For vim-markdown plugin
     hi markdownH1   term=bold cterm=bold ctermfg=40 gui=bold guifg=#00df00
     hi markdownH2   term=bold cterm=bold ctermfg=34 gui=bold guifg=#00af00
