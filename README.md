@@ -19,6 +19,14 @@ Or the light theme:
 let g:detorte_theme_mode = 'light'
 ```
 
+# Useful Commands
+- DetorteHighContrast  
+Turn on high contrast mode in dark theme mode. It is useful when you are presenting your screen.
+- DetorteHighlight <group> <fg-color-num> <bg-color-num> [style]  
+Change both the GUI and CTerm settings of highlight group `<group>`. `<fg-color-num>` and `<bg-color-num>` are the 256 color number and `-1` means not specified.  
+`[style]` is `bold`, `italic`, or `none`.  
+Example: `DetorteHighlight CursorLine 16 -1 none`.
+
 ***
 # Screenshots
 ![Screenshots_001](https://github.com/tamlok/detorte/blob/master/screenshots/detorte_001.png)
