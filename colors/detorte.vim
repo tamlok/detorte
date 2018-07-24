@@ -2,6 +2,7 @@
 " Le Tan (tamlokveer@gmail.com)
 " Combination of desert and torte colorscheme for better look on both gui and
 " terminal.
+" https://github.com/tamlok/detorte
 
 if !exists('g:detorte_theme_mode')
     let g:detorte_theme_mode = 'dark'
@@ -152,6 +153,7 @@ if g:detorte_theme_mode == 'dark'
     hi Title    guifg=IndianRed ctermfg=167
     hi Visual   gui=none guifg=#ffffff guibg=olivedrab cterm=none ctermfg=15 ctermbg=64
     hi WarningMsg   guifg=#ff5f87 ctermfg=204
+    hi Warning   guifg=#ff5f87 ctermfg=204
     hi CursorLine   term=NONE cterm=NONE ctermbg=240 gui=none guibg=#585858
     hi CursorLineNr term=bold cterm=bold ctermfg=226 gui=bold guifg=#ffff00
     hi PmenuSel ctermfg=16 ctermbg=220 cterm=NONE guifg=Black guibg=#ffdf00 gui=none
@@ -176,6 +178,9 @@ if g:detorte_theme_mode == 'dark'
     call s:DetorteHL('StatusLineReplace', 16, 139, 'None')
     call s:DetorteHL('StatusLine', 16, 179, 'None')
     hi StatusLineNC guibg=#c2bfa5 guifg=#262626 gui=none ctermbg=144 ctermfg=235 cterm=none
+
+    " Sign column
+    call s:DetorteHL('SignColumn', 184, 240, 'None')
 
     " Mode-aware cursor color
     hi InsertCursor  ctermfg=15 guifg=#fdf6e3 ctermbg=37  guibg=#2aa198
@@ -217,9 +222,14 @@ if g:detorte_theme_mode == 'dark'
 
     " For Tagbar plugin
     highlight TagbarSignature guifg=#5fd7ff ctermfg=81
+
     " For indentLine plugin
     let g:indentLine_color_term = 241
     let g:indentLine_color_gui = '#626262'
+
+    " For ALE plugin
+    hi link ALEErrorSign Error
+    hi link ALEWarningSign Warning
 else
     " Light background
     call s:DetorteHL('Normal', 234, 252)
@@ -239,6 +249,7 @@ else
     call s:DetorteHL('Title', 2, -1)
     hi Visual   gui=none guifg=#ffffff guibg=olivedrab cterm=none ctermfg=15 ctermbg=64
     call s:DetorteHL('WarningMsg', 5, -1)
+    call s:DetorteHL('Warning', 5, -1)
     call s:DetorteHL('CursorLine', -1, 250, 'None')
     call s:DetorteHL('CursorLineNr', 234, -1, 'Bold')
     hi PmenuSel ctermfg=16 ctermbg=220 cterm=NONE guifg=Black guibg=#ffdf00 gui=none
@@ -266,6 +277,9 @@ else
     call s:DetorteHL('StatusLineReplace', 16, 139, 'None')
     call s:DetorteHL('StatusLine', 16, 179, 'None')
     hi StatusLineNC guibg=#c2bfa5 guifg=#262626 gui=none ctermbg=144 ctermfg=235 cterm=none
+
+    " Sign column
+    call s:DetorteHL('SignColumn', 234, -1, 'None')
 
     " Mode-aware cursor color
     call s:DetorteHL('InsertCursor', 15, 25)
@@ -308,6 +322,10 @@ else
     call s:DetorteHL('EasyMotionTarget', 124, -1, 'Bold')
     call s:DetorteHL('EasyMotionTarget2First', 20, -1, 'Bold')
     call s:DetorteHL('EasyMotionTarget2Second', 5, -1, 'Bold')
+
+    " For ALE plugin
+    hi link ALEErrorSign Error
+    hi link ALEWarningSign Warning
 endif
 
 " Change highlights to a high contrast mode in dark theme mode
