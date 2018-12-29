@@ -136,7 +136,7 @@ function! s:DetorteHL(group, fg, bg, ...)
 endfunction
 
 if g:detorte_theme_mode == 'dark'
-    hi Normal   guifg=#dadada guibg=#444444 ctermfg=253 ctermbg=238
+    call s:DetorteHL('Normal', 252, 238, 'None')
 
     hi Cursor   guibg=#ffff87 guifg=#005f5f ctermbg=228 ctermfg=23
     hi VertSplit    guibg=#c2bfa5 guifg=grey50 gui=none
@@ -164,10 +164,6 @@ if g:detorte_theme_mode == 'dark'
     hi Error    guifg=White guibg=#d70000 ctermfg=15 ctermbg=160
     hi ColorColumn  ctermbg=237 guibg=#3a3a3a
     hi Modifier cterm=inverse ctermfg=118 gui=inverse guifg=#87ff00
-    hi StatuslineWarning    cterm=inverse ctermfg=210 gui=inverse guifg=#ff8787
-    hi StatuslineBufNum ctermbg=242 ctermfg=15 cterm=bold guibg=#6c6c6c guifg=#ffffff gui=bold
-    call s:DetorteHL('StatuslineFileName', 16, 73, 'None')
-    call s:DetorteHL('StatuslineLineNumber', 16, 110, 'None')
     hi Directory    ctermfg=50 guifg=#00eeee
     hi CursorColumn ctermbg=240 guibg=#585858
     hi Function gui=NONE cterm=NONE ctermfg=105 guifg=#B5A1FF
@@ -190,16 +186,17 @@ if g:detorte_theme_mode == 'dark'
 
     hi ExtraWhitespace ctermbg=202 guibg=#ff5f00
     hi TabLineSel    term=underline cterm=none ctermfg=16 ctermbg=185 guibg=#dfdf5f guifg=black gui=none
-    hi TabLine  guibg=#afafaf guifg=black gui=none ctermbg=145 ctermfg=16 cterm=none
+    call s:DetorteHL('TabLine', 16, 145, 'None')
+    call s:DetorteHL('TabLineFill', 16, 145, 'None')
 
     " Syntax highlights
     hi Special  ctermfg=214 guifg=#ffaf00
     hi Comment  term=bold ctermfg=138 guifg=#af8787
-    hi Constant term=underline ctermfg=210 guifg=#ff8787
-    hi Identifier   guifg=#00dfdf gui=none ctermfg=44 cterm=none
+    call s:DetorteHL('Constant', 174, -1, 'None')
+    call s:DetorteHL('Identifier', 111, -1, 'None')
     hi Statement    guifg=#ffdf5f gui=none ctermfg=221 cterm=none
-    hi PreProc  guifg=#ff5fdf ctermfg=206
-    hi Type	    guifg=#00d787 gui=none ctermfg=42 cterm=none
+    call s:DetorteHL('PreProc', 170, -1, 'None')
+    call s:DetorteHL('Type', 78, -1, 'None')
     hi Todo	    ctermfg=118 ctermbg=124 cterm=bold guifg=#87ff00 guibg=#af0000 gui=bold
 
     " Diff mode
@@ -232,44 +229,84 @@ if g:detorte_theme_mode == 'dark'
     hi link ALEWarningSign Warning
 else
     " Light background
-    call s:DetorteHL('Normal', 234, 252)
+    " Originated from https://github.com/nightsense/snow
+    call s:DetorteHL('Normal', 240, 255)
 
-    call s:DetorteHL('Cursor', 228, 23)
-    hi VertSplit    guibg=#c2bfa5 guifg=grey50 gui=none
-    hi Folded   guibg=#585858 guifg=gold ctermbg=240 ctermfg=220
-    hi FoldColumn   guibg=#585858 guifg=#afaf5f ctermbg=240 ctermfg=143
-    call s:DetorteHL('LineNr', 243, -1)
-    hi IncSearch    guifg=#000000 guibg=#87afff gui=none ctermfg=16 ctermbg=111 cterm=none
     call s:DetorteHL('ModeMsg', 2, -1)
     call s:DetorteHL('MoreMsg', 2, -1, "Bold")
-    call s:DetorteHL('NonText', 26, -1)
     call s:DetorteHL('Question', 27, -1)
-    call s:DetorteHL('Search', 0, 214)
-    call s:DetorteHL('SpecialKey', 247, -1)
+    call s:DetorteHL('NonText', 26, -1)
     call s:DetorteHL('Title', 2, -1)
-    hi Visual   gui=none guifg=#ffffff guibg=olivedrab cterm=none ctermfg=15 ctermbg=64
-    call s:DetorteHL('WarningMsg', 5, -1)
-    call s:DetorteHL('Warning', 5, -1)
-    call s:DetorteHL('CursorLine', -1, 250, 'None')
+    hi Comment ctermfg=243 ctermbg=NONE guifg=#6d7782 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     call s:DetorteHL('CursorLineNr', 234, -1, 'Bold')
-    hi PmenuSel ctermfg=16 ctermbg=220 cterm=NONE guifg=Black guibg=#ffdf00 gui=none
-    hi Pmenu    ctermfg=16 ctermbg=250 guifg=Black guibg=#bcbcbc
-    hi PmenuSbar    guibg=#5f5f00 ctermbg=58
-    call s:DetorteHL('PmenuThumb', -1, 220)
-    hi ErrorMsg guifg=White guibg=#d70000 ctermfg=15 ctermbg=160
-    hi Error    guifg=White guibg=#d70000 ctermfg=15 ctermbg=160
-    call s:DetorteHL('ColorColumn', -1, 251)
-    call s:DetorteHL('Modifier', 69, -1, "Inverse")
-    call s:DetorteHL('StatuslineWarning', 124, -1, "Inverse")
-    hi StatuslineBufNum ctermbg=242 ctermfg=15 cterm=bold guibg=#6c6c6c guifg=#ffffff gui=bold
-    call s:DetorteHL('StatuslineFileName', 16, 73, 'None')
-    call s:DetorteHL('StatuslineLineNumber', 16, 110, 'None')
-    call s:DetorteHL('Directory', 20, -1)
-    call s:DetorteHL('CursorColumn', -1, 250)
-    hi ExtraWhitespace ctermbg=202 guibg=#ff5f00
-    hi TabLineSel    term=underline cterm=none ctermfg=16 ctermbg=185 guibg=#dfdf5f guifg=black gui=none
-    hi TabLine  guibg=#afafaf guifg=black gui=none ctermbg=145 ctermfg=16 cterm=none
-    call s:DetorteHL('MatchParen', 15, 137)
+    hi LineNr ctermfg=243 ctermbg=NONE guifg=#6d7782 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi FoldColumn ctermfg=240 ctermbg=NONE guifg=#535c65 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi PmenuSel ctermfg=240 ctermbg=255 guifg=#535c65 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi SignColumn ctermfg=240 ctermbg=NONE guifg=#535c65 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi TabLineSel ctermfg=240 ctermbg=231 guifg=#535c65 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi VisualNOS ctermfg=243 ctermbg=231 guifg=#6d7782 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi Cursor ctermfg=238 ctermbg=231 guifg=#434951 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi IncSearch ctermfg=238 ctermbg=231 guifg=#434951 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    call s:DetorteHL('ColorColumn', -1, 253, 'None')
+    call s:DetorteHL('CursorColumn', -1, 252, 'None')
+    call s:DetorteHL('CursorLine', -1, 252, 'None')
+    hi DiffChange ctermfg=NONE ctermbg=255 guifg=NONE guibg=#e5ebf1 guisp=NONE cterm=NONE gui=NONE
+    hi Folded ctermfg=NONE ctermbg=255 guifg=NONE guibg=#e5ebf1 guisp=NONE cterm=NONE gui=NONE
+    hi MatchParen ctermfg=238 ctermbg=249 guifg=#434951 guibg=#afb7c0 guisp=NONE cterm=NONE gui=NONE
+    call s:DetorteHL('Pmenu', 240, 253, 'None')
+    hi QuickFixLine ctermfg=NONE ctermbg=255 guifg=NONE guibg=#e5ebf1 guisp=NONE cterm=NONE gui=NONE
+    hi TabLine ctermfg=240 ctermbg=255 guifg=#535c65 guibg=#e5ebf1 guisp=NONE cterm=NONE gui=NONE
+    hi ToolbarButton ctermfg=240 ctermbg=255 guifg=#535c65 guibg=#e5ebf1 guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi PmenuSbar ctermfg=249 ctermbg=249 guifg=#afb7c0 guibg=#afb7c0 guisp=NONE cterm=NONE gui=NONE
+    hi PmenuThumb ctermfg=240 ctermbg=240 guifg=#535c65 guibg=#535c65 guisp=NONE cterm=NONE gui=NONE
+    hi TabLineFill ctermfg=255 ctermbg=255 guifg=#e5ebf1 guibg=#e5ebf1 guisp=NONE cterm=NONE gui=NONE
+    hi ToolbarLine ctermfg=255 ctermbg=255 guifg=#e5ebf1 guibg=#e5ebf1 guisp=NONE cterm=NONE gui=NONE
+    hi VertSplit ctermfg=249 ctermbg=249 guifg=#afb7c0 guibg=#afb7c0 guisp=NONE cterm=NONE gui=NONE
+    hi SpellBad ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=#bc4d61 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellCap ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=#007cc3 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellLocal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=#008787 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellRare ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=#965dae cterm=NONE,underline gui=NONE,undercurl
+    call s:DetorteHL('Type', 92, -1, 'None')
+    hi TooLong ctermfg=97 ctermbg=231 guifg=#8f63a2 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi WarningMsg ctermfg=97 ctermbg=231 guifg=#8f63a2 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi Function ctermfg=131 ctermbg=NONE guifg=#ae5865 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Identifier ctermfg=131 ctermbg=NONE guifg=#ae5865 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi DiffDelete ctermfg=131 ctermbg=231 guifg=#ae5865 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi DiffRemoved ctermfg=131 ctermbg=231 guifg=#ae5865 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi Error ctermfg=131 ctermbg=231 guifg=#ae5865 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi ErrorMsg ctermfg=131 ctermbg=231 guifg=#ae5865 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi Debug ctermfg=94 ctermbg=NONE guifg=#906c33 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Delimiter ctermfg=94 ctermbg=NONE guifg=#906c33 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Special ctermfg=94 ctermbg=NONE guifg=#906c33 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi SpecialChar ctermfg=94 ctermbg=NONE guifg=#906c33 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi SpecialComment ctermfg=94 ctermbg=NONE guifg=#906c33 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi SpecialKey ctermfg=94 ctermbg=NONE guifg=#906c33 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Tag ctermfg=94 ctermbg=NONE guifg=#906c33 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi DiffChanged ctermfg=94 ctermbg=231 guifg=#906c33 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi DiffText ctermfg=94 ctermbg=231 guifg=#906c33 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    call s:DetorteHL('Search', 238, 179, 'None')
+    hi Conditional ctermfg=65 ctermbg=NONE guifg=#4d7f43 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Exception ctermfg=65 ctermbg=NONE guifg=#4d7f43 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Keyword ctermfg=65 ctermbg=NONE guifg=#4d7f43 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Label ctermfg=65 ctermbg=NONE guifg=#4d7f43 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Operator ctermfg=65 ctermbg=NONE guifg=#4d7f43 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Repeat ctermfg=65 ctermbg=NONE guifg=#4d7f43 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Statement ctermfg=65 ctermbg=NONE guifg=#4d7f43 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi DiffAdd ctermfg=65 ctermbg=231 guifg=#4d7f43 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi DiffAdded ctermfg=65 ctermbg=231 guifg=#4d7f43 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi Define ctermfg=30 ctermbg=NONE guifg=#008483 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Include ctermfg=30 ctermbg=NONE guifg=#008483 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Macro ctermfg=30 ctermbg=NONE guifg=#008483 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi PreCondit ctermfg=30 ctermbg=NONE guifg=#008483 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi PreProc ctermfg=30 ctermbg=NONE guifg=#008483 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Todo ctermfg=30 ctermbg=231 guifg=#008483 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi Boolean ctermfg=32 ctermbg=NONE guifg=#2b7ab2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Character ctermfg=32 ctermbg=NONE guifg=#2b7ab2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Constant ctermfg=32 ctermbg=NONE guifg=#2b7ab2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Float ctermfg=32 ctermbg=NONE guifg=#2b7ab2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Number ctermfg=32 ctermbg=NONE guifg=#2b7ab2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi String ctermfg=32 ctermbg=NONE guifg=#2b7ab2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Visual ctermfg=32 ctermbg=231 guifg=#2b7ab2 guibg=#fbffff guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 
     " Statusline
     call s:DetorteHL('StatusLineNormal', 16, 179, 'None')
@@ -278,26 +315,11 @@ else
     call s:DetorteHL('StatusLine', 16, 179, 'None')
     hi StatusLineNC guibg=#c2bfa5 guifg=#262626 gui=none ctermbg=144 ctermfg=235 cterm=none
 
-    " Sign column
-    call s:DetorteHL('SignColumn', 234, -1, 'None')
-
     " Mode-aware cursor color
     call s:DetorteHL('InsertCursor', 15, 25)
     hi VisualCursor  ctermfg=15 guifg=#fdf6e3 ctermbg=125 guibg=#d33682
     hi ReplaceCursor ctermfg=15 guifg=#fdf6e3 ctermbg=65  guibg=#dc322f
     call s:DetorteHL('CommandCursor', 15, 1)
-
-    " Syntax highlights
-    call s:DetorteHL('Special', 125, -1)
-    call s:DetorteHL('Comment', 58, -1)
-    call s:DetorteHL('Constant', 161, -1)
-    call s:DetorteHL('Identifier', 20, -1)
-    call s:DetorteHL('Statement', 124, -1)
-    call s:DetorteHL('PreProc', 92, -1)
-    call s:DetorteHL('Type', 28, -1, 'None')
-    call s:DetorteHL('Todo', 0, 9, 'Bold')
-    call s:DetorteHL('Function', 93, -1)
-    call s:DetorteHL('Underlined', 27, -1, 'Underline')
 
     " For vim-markdown plugin
     call s:DetorteHL('markdownH1', 28, -1, "Bold")
