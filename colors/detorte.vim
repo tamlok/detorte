@@ -230,14 +230,14 @@ if g:detorte_theme_mode == 'dark'
 else
     " Light background
     " Originated from https://github.com/nightsense/snow
-    call s:DetorteHL('Normal', 240, 255)
+    call s:DetorteHL('Normal', 238, 255)
 
     call s:DetorteHL('ModeMsg', 2, -1)
     call s:DetorteHL('MoreMsg', 2, -1, "Bold")
     call s:DetorteHL('Question', 27, -1)
     call s:DetorteHL('NonText', 26, -1)
     call s:DetorteHL('Title', 2, -1)
-    hi Comment ctermfg=243 ctermbg=NONE guifg=#6d7782 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    call s:DetorteHL('Comment', 96, -1)
     call s:DetorteHL('CursorLineNr', 234, -1, 'Bold')
     hi LineNr ctermfg=243 ctermbg=NONE guifg=#6d7782 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=240 ctermbg=NONE guifg=#535c65 guibg=NONE guisp=NONE cterm=NONE gui=NONE
