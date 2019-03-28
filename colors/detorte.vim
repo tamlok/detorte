@@ -138,6 +138,11 @@ endfunction
 if g:detorte_theme_mode == 'dark'
     call s:DetorteHL('Normal', 252, 238, 'None')
 
+    " Fix for Neovim NERDTree plugin
+    if has('nvim')
+        call s:DetorteHL('NERDTreeFile', 252, -1)
+    endif
+
     hi Cursor   guibg=#ffff87 guifg=#005f5f ctermbg=228 ctermfg=23
     hi VertSplit    guibg=#c2bfa5 guifg=grey50 gui=none
     hi Folded   guibg=#585858 guifg=gold ctermbg=240 ctermfg=220
@@ -231,6 +236,11 @@ else
     " Light background
     " Originated from https://github.com/nightsense/snow
     call s:DetorteHL('Normal', 238, 255)
+
+    " Fix for Neovim NERDTree plugin
+    if has('nvim')
+        call s:DetorteHL('NERDTreeFile', 238, -1)
+    endif
 
     call s:DetorteHL('ModeMsg', 2, -1)
     call s:DetorteHL('MoreMsg', 2, -1, "Bold")
